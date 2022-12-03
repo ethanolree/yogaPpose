@@ -16,6 +16,30 @@
 		7819F0212936D89800A64670 /* yogaPposeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0202936D89800A64670 /* yogaPposeTests.swift */; };
 		7819F02B2936D89800A64670 /* yogaPposeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F02A2936D89800A64670 /* yogaPposeUITests.swift */; };
 		7819F02D2936D89800A64670 /* yogaPposeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F02C2936D89800A64670 /* yogaPposeUITestsLaunchTests.swift */; };
+		7819F055293925DB00A64670 /* GradientOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0512939221200A64670 /* GradientOverlayView.swift */; };
+		7819F057293925E800A64670 /* PoseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F04E2939221200A64670 /* PoseImageView.swift */; };
+		7819F0582939262200A64670 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0542939221800A64670 /* VideoCapture.swift */; };
+		7819F0592939262400A64670 /* AVCaptureVideoOrientation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0532939221800A64670 /* AVCaptureVideoOrientation+Extension.swift */; };
+		7819F05A2939262C00A64670 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F04F2939221200A64670 /* ConfigurationViewController.swift */; };
+		7819F05B2939262E00A64670 /* PopOverModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0502939221200A64670 /* PopOverModalViewController.swift */; };
+		7819F05C2939263300A64670 /* PoseBuilderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F04B2939220E00A64670 /* PoseBuilderConfiguration.swift */; };
+		7819F05D2939263500A64670 /* PoseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F04A2939220E00A64670 /* PoseBuilder.swift */; };
+		7819F05E2939263700A64670 /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0492939220E00A64670 /* Pose.swift */; };
+		7819F05F2939263900A64670 /* PoseBuilder+Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0482939220E00A64670 /* PoseBuilder+Single.swift */; };
+		7819F0602939263B00A64670 /* PoseBuilder+Multiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0472939220E00A64670 /* PoseBuilder+Multiple.swift */; };
+		7819F0612939263E00A64670 /* Joint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0462939220E00A64670 /* Joint.swift */; };
+		7819F0622939264200A64670 /* PoseNetOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0412939220700A64670 /* PoseNetOutput.swift */; };
+		7819F0632939264400A64670 /* PoseNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0422939220700A64670 /* PoseNet.swift */; };
+		7819F0642939264600A64670 /* PoseNetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F0432939220700A64670 /* PoseNetInput.swift */; };
+		7819F0652939265400A64670 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F03E293921FB00A64670 /* CGPoint+Extension.swift */; };
+		7819F0662939265600A64670 /* CGImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F03F293921FB00A64670 /* CGImage+Extension.swift */; };
+		7819F06A29392AA400A64670 /* PoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F06929392AA400A64670 /* PoseViewController.swift */; };
+		7819F06E2939669500A64670 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7819F06D2939669500A64670 /* PoseNetMobileNet075S16FP16.mlmodel */; };
+		7819F07A293AA6FC00A64670 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F079293AA6FC00A64670 /* TableViewController.swift */; };
+		7819F07C293AA76300A64670 /* WorkoutsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F07B293AA76300A64670 /* WorkoutsModel.swift */; };
+		7819F07E293AA81400A64670 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F07D293AA81400A64670 /* Workout.swift */; };
+		7819F081293AA86E00A64670 /* WorkoutPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F080293AA86E00A64670 /* WorkoutPose.swift */; };
+		7819F083293AB83000A64670 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F082293AB83000A64670 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +73,30 @@
 		7819F0262936D89800A64670 /* yogaPposeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yogaPposeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7819F02A2936D89800A64670 /* yogaPposeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaPposeUITests.swift; sourceTree = "<group>"; };
 		7819F02C2936D89800A64670 /* yogaPposeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yogaPposeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7819F03E293921FB00A64670 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
+		7819F03F293921FB00A64670 /* CGImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Extension.swift"; sourceTree = "<group>"; };
+		7819F0412939220700A64670 /* PoseNetOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseNetOutput.swift; sourceTree = "<group>"; };
+		7819F0422939220700A64670 /* PoseNet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseNet.swift; sourceTree = "<group>"; };
+		7819F0432939220700A64670 /* PoseNetInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseNetInput.swift; sourceTree = "<group>"; };
+		7819F0462939220E00A64670 /* Joint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joint.swift; sourceTree = "<group>"; };
+		7819F0472939220E00A64670 /* PoseBuilder+Multiple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PoseBuilder+Multiple.swift"; sourceTree = "<group>"; };
+		7819F0482939220E00A64670 /* PoseBuilder+Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PoseBuilder+Single.swift"; sourceTree = "<group>"; };
+		7819F0492939220E00A64670 /* Pose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
+		7819F04A2939220E00A64670 /* PoseBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseBuilder.swift; sourceTree = "<group>"; };
+		7819F04B2939220E00A64670 /* PoseBuilderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseBuilderConfiguration.swift; sourceTree = "<group>"; };
+		7819F04E2939221200A64670 /* PoseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseImageView.swift; sourceTree = "<group>"; };
+		7819F04F2939221200A64670 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		7819F0502939221200A64670 /* PopOverModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverModalViewController.swift; sourceTree = "<group>"; };
+		7819F0512939221200A64670 /* GradientOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientOverlayView.swift; sourceTree = "<group>"; };
+		7819F0532939221800A64670 /* AVCaptureVideoOrientation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoOrientation+Extension.swift"; sourceTree = "<group>"; };
+		7819F0542939221800A64670 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		7819F06929392AA400A64670 /* PoseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseViewController.swift; sourceTree = "<group>"; };
+		7819F06D2939669500A64670 /* PoseNetMobileNet075S16FP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PoseNetMobileNet075S16FP16.mlmodel; sourceTree = "<group>"; };
+		7819F079293AA6FC00A64670 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7819F07B293AA76300A64670 /* WorkoutsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsModel.swift; sourceTree = "<group>"; };
+		7819F07D293AA81400A64670 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		7819F080293AA86E00A64670 /* WorkoutPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPose.swift; sourceTree = "<group>"; };
+		7819F082293AB83000A64670 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +147,14 @@
 		7819F0082936D89700A64670 /* yogaPpose */ = {
 			isa = PBXGroup;
 			children = (
+				7819F07F293AA81E00A64670 /* Workout */,
+				7819F03D293921FB00A64670 /* Extensions+Types */,
+				7819F0402939220700A64670 /* Model */,
+				7819F0452939220E00A64670 /* Pose */,
+				7819F04C2939221200A64670 /* UI */,
+				7819F0522939221800A64670 /* Utils */,
 				7819F0092936D89700A64670 /* AppDelegate.swift */,
 				7819F00B2936D89700A64670 /* SceneDelegate.swift */,
-				7819F00D2936D89700A64670 /* ViewController.swift */,
 				7819F00F2936D89700A64670 /* Main.storyboard */,
 				7819F0122936D89800A64670 /* Assets.xcassets */,
 				7819F0142936D89800A64670 /* LaunchScreen.storyboard */,
@@ -125,6 +178,73 @@
 				7819F02C2936D89800A64670 /* yogaPposeUITestsLaunchTests.swift */,
 			);
 			path = yogaPposeUITests;
+			sourceTree = "<group>";
+		};
+		7819F03D293921FB00A64670 /* Extensions+Types */ = {
+			isa = PBXGroup;
+			children = (
+				7819F03E293921FB00A64670 /* CGPoint+Extension.swift */,
+				7819F03F293921FB00A64670 /* CGImage+Extension.swift */,
+			);
+			path = "Extensions+Types";
+			sourceTree = "<group>";
+		};
+		7819F0402939220700A64670 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7819F06D2939669500A64670 /* PoseNetMobileNet075S16FP16.mlmodel */,
+				7819F0412939220700A64670 /* PoseNetOutput.swift */,
+				7819F0422939220700A64670 /* PoseNet.swift */,
+				7819F0432939220700A64670 /* PoseNetInput.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7819F0452939220E00A64670 /* Pose */ = {
+			isa = PBXGroup;
+			children = (
+				7819F0462939220E00A64670 /* Joint.swift */,
+				7819F0472939220E00A64670 /* PoseBuilder+Multiple.swift */,
+				7819F0482939220E00A64670 /* PoseBuilder+Single.swift */,
+				7819F0492939220E00A64670 /* Pose.swift */,
+				7819F04A2939220E00A64670 /* PoseBuilder.swift */,
+				7819F04B2939220E00A64670 /* PoseBuilderConfiguration.swift */,
+			);
+			path = Pose;
+			sourceTree = "<group>";
+		};
+		7819F04C2939221200A64670 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				7819F079293AA6FC00A64670 /* TableViewController.swift */,
+				7819F06929392AA400A64670 /* PoseViewController.swift */,
+				7819F00D2936D89700A64670 /* ViewController.swift */,
+				7819F04E2939221200A64670 /* PoseImageView.swift */,
+				7819F04F2939221200A64670 /* ConfigurationViewController.swift */,
+				7819F0502939221200A64670 /* PopOverModalViewController.swift */,
+				7819F0512939221200A64670 /* GradientOverlayView.swift */,
+				7819F082293AB83000A64670 /* TableViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7819F0522939221800A64670 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7819F0532939221800A64670 /* AVCaptureVideoOrientation+Extension.swift */,
+				7819F0542939221800A64670 /* VideoCapture.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7819F07F293AA81E00A64670 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				7819F07B293AA76300A64670 /* WorkoutsModel.swift */,
+				7819F07D293AA81400A64670 /* Workout.swift */,
+				7819F080293AA86E00A64670 /* WorkoutPose.swift */,
+			);
+			path = Workout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +378,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7819F07A293AA6FC00A64670 /* TableViewController.swift in Sources */,
+				7819F0582939262200A64670 /* VideoCapture.swift in Sources */,
+				7819F0592939262400A64670 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
+				7819F0622939264200A64670 /* PoseNetOutput.swift in Sources */,
 				7819F00E2936D89700A64670 /* ViewController.swift in Sources */,
+				7819F07C293AA76300A64670 /* WorkoutsModel.swift in Sources */,
+				7819F06A29392AA400A64670 /* PoseViewController.swift in Sources */,
+				7819F0662939265600A64670 /* CGImage+Extension.swift in Sources */,
+				7819F05B2939262E00A64670 /* PopOverModalViewController.swift in Sources */,
+				7819F0632939264400A64670 /* PoseNet.swift in Sources */,
 				7819F00A2936D89700A64670 /* AppDelegate.swift in Sources */,
+				7819F05C2939263300A64670 /* PoseBuilderConfiguration.swift in Sources */,
+				7819F083293AB83000A64670 /* TableViewCell.swift in Sources */,
+				7819F0602939263B00A64670 /* PoseBuilder+Multiple.swift in Sources */,
+				7819F05A2939262C00A64670 /* ConfigurationViewController.swift in Sources */,
+				7819F0642939264600A64670 /* PoseNetInput.swift in Sources */,
 				7819F00C2936D89700A64670 /* SceneDelegate.swift in Sources */,
+				7819F0612939263E00A64670 /* Joint.swift in Sources */,
+				7819F05E2939263700A64670 /* Pose.swift in Sources */,
+				7819F05F2939263900A64670 /* PoseBuilder+Single.swift in Sources */,
+				7819F055293925DB00A64670 /* GradientOverlayView.swift in Sources */,
+				7819F081293AA86E00A64670 /* WorkoutPose.swift in Sources */,
+				7819F05D2939263500A64670 /* PoseBuilder.swift in Sources */,
+				7819F0652939265400A64670 /* CGPoint+Extension.swift in Sources */,
+				7819F057293925E800A64670 /* PoseImageView.swift in Sources */,
+				7819F07E293AA81400A64670 /* Workout.swift in Sources */,
+				7819F06E2939669500A64670 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +564,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -450,7 +594,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = smu.yogaPpose;
+				PRODUCT_BUNDLE_IDENTIFIER = smu.yogappose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -478,7 +622,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = smu.yogaPpose;
+				PRODUCT_BUNDLE_IDENTIFIER = smu.yogappose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
