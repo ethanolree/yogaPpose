@@ -12,6 +12,9 @@ class WorkoutPose {
     /// The name used to identify the pose
     let name: String
     
+    /// Associated CoreML identifier
+    let id: String
+    
     /// The time the pose takes
     var length: Double
     
@@ -19,9 +22,11 @@ class WorkoutPose {
     var poseImage: UIImage
     
     init(name: String,
+         id: String,
          length: Double,
          poseImageName: String) {
         self.name = name
+        self.id = id
         self.length = length
         self.poseImage = WorkoutPose.getPoseImage(name: poseImageName)
     }

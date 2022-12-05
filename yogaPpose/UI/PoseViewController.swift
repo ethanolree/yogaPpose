@@ -13,10 +13,20 @@ import VideoToolbox
 class PoseViewController: UIViewController {
     /// The view the controller uses to visualize the detected poses.
     @IBOutlet weak var previewImageView: PoseImageView!
+    @IBOutlet weak var currentPoseImage: UIImageView!
+    @IBOutlet weak var poseGradient: GradientOverlayView!
+    
+    /// The workout as currently selected by the user
+    var workout: Workout!
+    
+    /// The current pose of the workout
+    var currentPose: WorkoutPose!
     
     private let videoCapture = VideoCapture()
 
     private var poseNet: PoseNet!
+    
+    private var yogaPose = YogaPose()
 
     /// The frame the PoseNet model is currently making pose predictions from.
     private var currentFrame: CGImage?
@@ -24,7 +34,7 @@ class PoseViewController: UIViewController {
     /// The algorithm the controller uses to extract poses from the current frame.
     private var algorithm: Algorithm = .single
     
-    private var output: PoseNetOutput!
+    private var poses: [Pose]!
 
     /// The set of parameters passed to the pose builder when detecting poses.
     private var poseBuilderConfiguration = PoseBuilderConfiguration()
@@ -70,8 +80,31 @@ class PoseViewController: UIViewController {
     }
     
     private func setupPoseTimer() {
+        initiateNextPose(poseIndex: 0)
         _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            // TODO: use pose net output predictions to categorize current pose
+            let prediction = self.yogaPose.predict(self.poses[0])
+            
+            if (prediction == self.currentPose.id) {
+                self.currentPoseImage.backgroundColor = UIColor.green
+                self.poseGradient.endColor = UIColor.green
+            } else {
+                self.currentPoseImage.backgroundColor = UIColor.red
+                self.poseGradient.endColor = UIColor.red
+            }
+        }
+    }
+    
+    private func initiateNextPose(poseIndex: Int) {
+        if (poseIndex >= self.workout.workoutPoses.count) {
+            return
+        } else {
+            self.currentPose = self.workout.workoutPoses[poseIndex]
+            self.currentPoseImage.image = self.currentPose.poseImage
+            
+            /// Set a timer to change to the next pose once the current one is finished
+            _ = Timer.scheduledTimer(withTimeInterval: self.currentPose.length, repeats: false) { timer in
+                self.initiateNextPose(poseIndex: poseIndex + 1)
+            }
         }
     }
 
@@ -171,7 +204,7 @@ extension PoseViewController: PoseNetDelegate {
             ? [poseBuilder.pose]
             : poseBuilder.poses
         
-        self.output = predictions
+        self.poses = poses
 
         previewImageView.show(poses: poses, on: currentFrame)
     }

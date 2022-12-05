@@ -24,7 +24,7 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.workoutsModel.workouts.count
+        return self.workoutsModel.workoutsArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,7 +32,7 @@ class TableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: dynamicCellId, for: indexPath) as! TableViewCell
 
-        cell.workout = workoutsModel.workouts[indexPath.row]
+        cell.workout = workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]
 
         return cell
     }
@@ -55,9 +55,9 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         if let viewController = segue.destination as? PoseViewController,
-           let cell = sender as? UITableViewCell,
-           let name = cell.textLabel?.text {
-                // TODO: Set workout on segue
+           let cell = sender as? TableViewCell,
+           let workout = cell.workout {
+                viewController.workout = workout
             }
     }
 

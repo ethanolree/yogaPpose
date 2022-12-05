@@ -40,6 +40,8 @@
 		7819F07E293AA81400A64670 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F07D293AA81400A64670 /* Workout.swift */; };
 		7819F081293AA86E00A64670 /* WorkoutPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F080293AA86E00A64670 /* WorkoutPose.swift */; };
 		7819F083293AB83000A64670 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F082293AB83000A64670 /* TableViewCell.swift */; };
+		78C8450D293D611B00A65614 /* YogaPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8450C293D611A00A65614 /* YogaPose.swift */; };
+		78C8450F293D7D5400A65614 /* yogapose.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 78C8450E293D7D5400A65614 /* yogapose.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		7819F07D293AA81400A64670 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		7819F080293AA86E00A64670 /* WorkoutPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPose.swift; sourceTree = "<group>"; };
 		7819F082293AB83000A64670 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		78C8450C293D611A00A65614 /* YogaPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaPose.swift; sourceTree = "<group>"; };
+		78C8450E293D7D5400A65614 /* yogapose.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yogapose.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,10 +196,12 @@
 		7819F0402939220700A64670 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				78C8450E293D7D5400A65614 /* yogapose.mlmodel */,
 				7819F06D2939669500A64670 /* PoseNetMobileNet075S16FP16.mlmodel */,
 				7819F0412939220700A64670 /* PoseNetOutput.swift */,
 				7819F0422939220700A64670 /* PoseNet.swift */,
 				7819F0432939220700A64670 /* PoseNetInput.swift */,
+				78C8450C293D611A00A65614 /* YogaPose.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,9 +407,11 @@
 				7819F055293925DB00A64670 /* GradientOverlayView.swift in Sources */,
 				7819F081293AA86E00A64670 /* WorkoutPose.swift in Sources */,
 				7819F05D2939263500A64670 /* PoseBuilder.swift in Sources */,
+				78C8450F293D7D5400A65614 /* yogapose.mlmodel in Sources */,
 				7819F0652939265400A64670 /* CGPoint+Extension.swift in Sources */,
 				7819F057293925E800A64670 /* PoseImageView.swift in Sources */,
 				7819F07E293AA81400A64670 /* Workout.swift in Sources */,
+				78C8450D293D611B00A65614 /* YogaPose.swift in Sources */,
 				7819F06E2939669500A64670 /* PoseNetMobileNet075S16FP16.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

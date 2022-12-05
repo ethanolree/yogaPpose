@@ -10,8 +10,26 @@ import UIKit
 class WorkoutsModel: NSObject {
     static let sharedInstance = WorkoutsModel()
     
-    var workouts: [Workout] = [
-        Workout(name: "workout1", workoutPoses: [WorkoutPose(name: "pose1", length: 5.0, poseImageName: "pose1"), WorkoutPose(name: "pose2", length: 5.0, poseImageName: "pose2")]),
-        Workout(name: "workout2", workoutPoses: [WorkoutPose(name: "pose1", length: 5.0, poseImageName: "pose2")])
+    var workoutsArray: [String] = [
+        "workout1",
+        "workout2"
     ]
+    
+    lazy var workoutsDict: [String: Workout] = [
+        "workout1": Workout(name: "Workout 1", workoutPoses: [
+            getWorkoutPoseWithId(id: "downwardDog"), getWorkoutPoseWithId(id: "goddess")
+        ]),
+        "workout2": Workout(name: "Workout 2", workoutPoses: [
+            getWorkoutPoseWithId(id: "goddess")
+        ])
+    ]
+    
+    var poses: [String: WorkoutPose] = [
+        "downwardDog": WorkoutPose(name: "Downward Dog", id: "downdog", length: 5.0, poseImageName: "pose1"),
+        "goddess": WorkoutPose(name: "Goddess", id: "goddess", length: 5.0, poseImageName: "pose2")
+    ]
+    
+    private func getWorkoutPoseWithId(id: String) -> WorkoutPose {
+        return self.poses[id]!
+    }
 }
