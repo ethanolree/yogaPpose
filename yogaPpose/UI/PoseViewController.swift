@@ -85,10 +85,10 @@ class PoseViewController: UIViewController {
             let prediction = self.yogaPose.predict(self.poses[0])
             
             if (prediction == self.currentPose.id) {
-                self.currentPoseImage.backgroundColor = UIColor.green
+                self.currentPoseImage.backgroundColor = UIColor.green.withAlphaComponent(0.5)
                 self.poseGradient.endColor = UIColor.green
             } else {
-                self.currentPoseImage.backgroundColor = UIColor.red
+                self.currentPoseImage.backgroundColor = UIColor.red.withAlphaComponent(0.5)
                 self.poseGradient.endColor = UIColor.red
             }
         }
