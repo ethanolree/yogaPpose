@@ -9,6 +9,8 @@ import UIKit
 
 class WorkoutsModel: NSObject {
     static let sharedInstance = WorkoutsModel()
+    let defaults = UserDefaults.standard
+    
     
     var workoutsArray: [String] = [
         "workout1",
@@ -18,7 +20,7 @@ class WorkoutsModel: NSObject {
     
     lazy var workoutsDict: [String: Workout] = [
         "workout1": Workout(name: "Workout 1", workoutPoses: [
-            getWorkoutPoseWithId(id: "downwardDog"), getWorkoutPoseWithId(id: "goddess")
+            setPoseLength(id: "downwardDog", timerLength: 2.0), getWorkoutPoseWithId(id: "goddess")
         ]),
         "workout2": Workout(name: "Workout 2", workoutPoses: [
             getWorkoutPoseWithId(id: "goddess"), getWorkoutPoseWithId(id: "tree")
@@ -36,7 +38,39 @@ class WorkoutsModel: NSObject {
         "warrior": WorkoutPose(name: "warrior", id: "warrior", length: 10.0, poseImageName: "warrior")
     ]
     
+    
+    private func initWorkoutPoses(){
+        if defaults.object(forKey: "Workouts") == nil{
+            defaults.set(workoutsDict, forKey: "Workouts")
+            print("inits")
+        } else {
+            defaults.set(workoutsDict, forKey: "Workouts")
+            workoutsDict = defaults.object(forKey: "Workouts") as? [String: Workout] ?? [String: Workout]()
+        }
+        
+    }
+       
+    private func setPoseLength(id: String, timerLength: Double) -> WorkoutPose {
+        var tempPose = self.poses[id]
+        tempPose?.length = timerLength
+        return tempPose!
+    }
+    
     private func getWorkoutPoseWithId(id: String) -> WorkoutPose {
         return self.poses[id]!
     }
+    
+    func addWorkoutToDict(workoutName: String, newWorkout: Workout){
+        workoutsDict = defaults.object(forKey: "Workouts") as? [String: Workout] ?? [String: Workout]()
+        workoutsDict[workoutName] = newWorkout
+        defaults.set(workoutsDict, forKey: "Workouts")
+    }
+    
+    func removeWorkoutDict(workoutName: String){
+        workoutsDict = defaults.object(forKey: "Workouts") as? [String: Workout] ?? [String: Workout]()
+        workoutsDict.removeValue(forKey: workoutName)
+        defaults.set(workoutsDict, forKey: "Workouts")
+    }
+        
+    
 }
