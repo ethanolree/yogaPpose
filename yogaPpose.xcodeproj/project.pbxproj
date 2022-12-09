@@ -42,6 +42,7 @@
 		7819F083293AB83000A64670 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F082293AB83000A64670 /* TableViewCell.swift */; };
 		78C8450D293D611B00A65614 /* YogaPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8450C293D611A00A65614 /* YogaPose.swift */; };
 		78C8450F293D7D5400A65614 /* yogapose.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 78C8450E293D7D5400A65614 /* yogapose.mlmodel */; };
+		78C845112942D7BA00A65614 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C845102942D7BA00A65614 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		7819F082293AB83000A64670 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		78C8450C293D611A00A65614 /* YogaPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaPose.swift; sourceTree = "<group>"; };
 		78C8450E293D7D5400A65614 /* yogapose.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yogapose.mlmodel; sourceTree = "<group>"; };
+		78C845102942D7BA00A65614 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 				7819F0502939221200A64670 /* PopOverModalViewController.swift */,
 				7819F0512939221200A64670 /* GradientOverlayView.swift */,
 				7819F082293AB83000A64670 /* TableViewCell.swift */,
+				78C845102942D7BA00A65614 /* StartViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				7819F0592939262400A64670 /* AVCaptureVideoOrientation+Extension.swift in Sources */,
 				7819F0622939264200A64670 /* PoseNetOutput.swift in Sources */,
 				7819F00E2936D89700A64670 /* ViewController.swift in Sources */,
+				78C845112942D7BA00A65614 /* StartViewController.swift in Sources */,
 				7819F07C293AA76300A64670 /* WorkoutsModel.swift in Sources */,
 				7819F06A29392AA400A64670 /* PoseViewController.swift in Sources */,
 				7819F0662939265600A64670 /* CGImage+Extension.swift in Sources */,

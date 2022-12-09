@@ -45,6 +45,10 @@ class PoseViewController: UIViewController {
         super.viewDidLoad()
         super.beginAppearanceTransition(true, animated: false)
         self.tabBarController?.tabBar.isHidden = true
+        self.poseGradient.isHidden = true
+        self.currentPoseImage.isHidden = true
+        
+        performSegue(withIdentifier: "initialPoseModalSegue", sender: self)
 
         // For convenience, the idle timer is disabled to prevent the screen from locking.
         UIApplication.shared.isIdleTimerDisabled = true
@@ -57,7 +61,6 @@ class PoseViewController: UIViewController {
 
         poseNet.delegate = self
         setupAndBeginCapturingVideoFrames()
-        setupPoseTimer()
     }
 
     private func setupAndBeginCapturingVideoFrames() {
@@ -128,13 +131,23 @@ class PoseViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
+        self.poseGradient.isHidden = false
+        self.currentPoseImage.isHidden = false
+        setupPoseTimer()
+    }
 }
 
 // MARK: - Navigation
 
 extension PoseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let uiNavigationController = segue.destination as? UINavigationController else {
+        if let startViewController = segue.destination as? StartViewController {
+            startViewController.workout = self.workout
+        }
+        
+        /*guard let uiNavigationController = segue.destination as? UINavigationController else {
             return
         }
         guard let configurationViewController = uiNavigationController.viewControllers.first
@@ -149,7 +162,7 @@ extension PoseViewController {
         popOverPresentationManager = PopOverPresentationManager(presenting: self,
                                                                 presented: uiNavigationController)
         segue.destination.modalPresentationStyle = .custom
-        segue.destination.transitioningDelegate = popOverPresentationManager
+        segue.destination.transitioningDelegate = popOverPresentationManager*/
     }
 }
 
