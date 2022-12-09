@@ -132,7 +132,7 @@ class PoseViewController: UIViewController {
         }
     }
     
-    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
+    @IBAction func startWorkout(segue: UIStoryboardSegue) {
         self.poseGradient.isHidden = false
         self.currentPoseImage.isHidden = false
         setupPoseTimer()

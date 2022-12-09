@@ -60,5 +60,9 @@ class TableViewController: UITableViewController {
                 viewController.workout = workout
             }
     }
+    
+    @IBAction func cancelWorkout(segue: UIStoryboardSegue) {
+        print("Workout Canceled")
+    }
 
 }

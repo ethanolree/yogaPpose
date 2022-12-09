@@ -309,25 +309,38 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7w-xA-Pix">
-                                        <rect key="frame" x="88.999999999999986" y="195" width="62.000000000000014" height="35"/>
+                                        <rect key="frame" x="129" y="195" width="62.000000000000014" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Start">
+                                            <color key="baseBackgroundColor" red="0.5490196078431373" green="0.20392156862745098" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="o6Z-C2-ibq" kind="unwind" unwindAction="startWorkoutWithSegue:" id="CQO-Sv-l67"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uji-3I-RbE">
+                                        <rect key="frame" x="44" y="195" width="77" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Cancel">
                                             <color key="baseBackgroundColor" red="0.25098039215686274" green="0.070588235294117646" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="o6Z-C2-ibq" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="1UX-7E-bSn"/>
+                                            <segue destination="o6Z-C2-ibq" kind="unwind" unwindAction="cancelWorkoutWithSegue:" id="uTK-k0-2bt"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.85098039215686272" green="0.72156862745098038" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="8iq-3G-Iir" secondAttribute="bottom" constant="183" id="2vz-z5-z8j"/>
-                                    <constraint firstItem="V7w-xA-Pix" firstAttribute="centerX" secondItem="sU7-yc-X6U" secondAttribute="centerX" id="39T-ea-C0R"/>
+                                    <constraint firstItem="V7w-xA-Pix" firstAttribute="centerX" secondItem="sU7-yc-X6U" secondAttribute="centerX" constant="40" id="39T-ea-C0R"/>
                                     <constraint firstAttribute="width" constant="240" id="Ebi-87-ZSP"/>
+                                    <constraint firstItem="uji-3I-RbE" firstAttribute="top" secondItem="8iq-3G-Iir" secondAttribute="bottom" constant="140" id="Gce-fR-H6S"/>
                                     <constraint firstItem="V7w-xA-Pix" firstAttribute="top" secondItem="8iq-3G-Iir" secondAttribute="bottom" constant="140" id="Ijm-Nx-e5l"/>
                                     <constraint firstAttribute="bottom" secondItem="V7w-xA-Pix" secondAttribute="bottom" constant="8" id="K34-qh-JJc"/>
                                     <constraint firstAttribute="height" constant="238" id="MwU-dF-sVP"/>
+                                    <constraint firstItem="uji-3I-RbE" firstAttribute="centerX" secondItem="sU7-yc-X6U" secondAttribute="centerX" constant="-37.5" id="Qen-Nc-gK4"/>
                                     <constraint firstItem="8iq-3G-Iir" firstAttribute="top" secondItem="sU7-yc-X6U" secondAttribute="top" constant="8" id="dV3-M0-bdS"/>
+                                    <constraint firstAttribute="bottom" secondItem="uji-3I-RbE" secondAttribute="bottom" constant="8" id="obI-hN-Cdh"/>
                                     <constraint firstItem="8iq-3G-Iir" firstAttribute="centerX" secondItem="sU7-yc-X6U" secondAttribute="centerX" id="yuJ-ZP-Rwa"/>
                                 </constraints>
                             </view>
