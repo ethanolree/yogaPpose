@@ -50,7 +50,7 @@ class WorkoutsModel: NSObject {
         
     }
        
-    private func setPoseLength(id: String, timerLength: Double) -> WorkoutPose {
+    func setPoseLength(id: String, timerLength: Double) -> WorkoutPose {
         var tempPose = self.poses[id]
         tempPose?.length = timerLength
         return tempPose!
@@ -72,5 +72,6 @@ class WorkoutsModel: NSObject {
         defaults.set(workoutsDict, forKey: "Workouts")
     }
         
+    
     
 }
