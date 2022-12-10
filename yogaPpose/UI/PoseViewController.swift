@@ -41,6 +41,10 @@ class PoseViewController: UIViewController {
 
     private var popOverPresentationManager: PopOverPresentationManager?
 
+    // For scoring the workout
+    let defaults = UserDefaults.standard
+    private var score: [String: Double] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         super.beginAppearanceTransition(true, animated: false)
@@ -90,9 +94,11 @@ class PoseViewController: UIViewController {
             if (prediction == self.currentPose.id) {
                 self.currentPoseImage.backgroundColor = UIColor.green.withAlphaComponent(0.5)
                 self.poseGradient.endColor = UIColor.green
+                self.score[self.currentPose.name] = self.score[self.currentPose.name]! + 1
             } else {
                 self.currentPoseImage.backgroundColor = UIColor.red.withAlphaComponent(0.5)
                 self.poseGradient.endColor = UIColor.red
+                
             }
         }
     }
@@ -103,6 +109,7 @@ class PoseViewController: UIViewController {
         } else {
             self.currentPose = self.workout.workoutPoses[poseIndex]
             self.currentPoseImage.image = self.currentPose.poseImage
+            self.score[self.currentPose.name] = 0
             
             /// Set a timer to change to the next pose once the current one is finished
             _ = Timer.scheduledTimer(withTimeInterval: self.currentPose.length, repeats: false) { timer in
@@ -112,6 +119,7 @@ class PoseViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
+        defaults.set(self.score, forKey: self.workout.name)
         self.tabBarController?.tabBar.isHidden = false
         videoCapture.stopCapturing {
             super.endAppearanceTransition()
