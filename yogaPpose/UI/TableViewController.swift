@@ -54,6 +54,11 @@ class TableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    
+    // Override to support determining if a row is editable
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row < self.workoutsModel.workoutsArray.count
+    }
 
     // MARK: - Navigation
 

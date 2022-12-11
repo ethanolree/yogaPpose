@@ -40,6 +40,8 @@
 		7819F07E293AA81400A64670 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F07D293AA81400A64670 /* Workout.swift */; };
 		7819F081293AA86E00A64670 /* WorkoutPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F080293AA86E00A64670 /* WorkoutPose.swift */; };
 		7819F083293AB83000A64670 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F082293AB83000A64670 /* TableViewCell.swift */; };
+		782917CF294682FF00B16CF4 /* UI in Resources */ = {isa = PBXBuildFile; fileRef = 782917CE294682FF00B16CF4 /* UI */; };
+		782917D52946831900B16CF4 /* TableViewScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782917D22946831900B16CF4 /* TableViewScoreCell.swift */; };
 		78C8450D293D611B00A65614 /* YogaPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8450C293D611A00A65614 /* YogaPose.swift */; };
 		78C8450F293D7D5400A65614 /* yogapose.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 78C8450E293D7D5400A65614 /* yogapose.mlmodel */; };
 		78C845112942D7BA00A65614 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C845102942D7BA00A65614 /* StartViewController.swift */; };
@@ -105,6 +107,8 @@
 		7819F07D293AA81400A64670 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		7819F080293AA86E00A64670 /* WorkoutPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPose.swift; sourceTree = "<group>"; };
 		7819F082293AB83000A64670 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		782917CE294682FF00B16CF4 /* UI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UI; sourceTree = "<group>"; };
+		782917D22946831900B16CF4 /* TableViewScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewScoreCell.swift; sourceTree = "<group>"; };
 		78C8450C293D611A00A65614 /* YogaPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaPose.swift; sourceTree = "<group>"; };
 		78C8450E293D7D5400A65614 /* yogapose.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yogapose.mlmodel; sourceTree = "<group>"; };
 		78C845102942D7BA00A65614 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				7819F0092936D89700A64670 /* AppDelegate.swift */,
 				7819F00B2936D89700A64670 /* SceneDelegate.swift */,
 				7819F00F2936D89700A64670 /* Main.storyboard */,
+				782917CE294682FF00B16CF4 /* UI */,
 				7819F0122936D89800A64670 /* Assets.xcassets */,
 				7819F0142936D89800A64670 /* LaunchScreen.storyboard */,
 				7819F0172936D89800A64670 /* Info.plist */,
@@ -234,6 +239,7 @@
 		7819F04C2939221200A64670 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				782917D22946831900B16CF4 /* TableViewScoreCell.swift */,
 				78D939AC29453F9D003A7777 /* CollectionViewCell.swift */,
 				7819F079293AA6FC00A64670 /* TableViewController.swift */,
 				7819F06929392AA400A64670 /* PoseViewController.swift */,
@@ -375,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782917CF294682FF00B16CF4 /* UI in Resources */,
 				7819F0162936D89800A64670 /* LaunchScreen.storyboard in Resources */,
 				7819F0132936D89800A64670 /* Assets.xcassets in Resources */,
 				7819F0112936D89700A64670 /* Main.storyboard in Resources */,
@@ -420,6 +427,7 @@
 				78D939AE29453F9D003A7777 /* CollectionViewCell.swift in Sources */,
 				78D939B529454D5F003A7777 /* TableViewAddWorkoutController.swift in Sources */,
 				78D939B729454DEA003A7777 /* WorkoutBuilder.swift in Sources */,
+				782917D52946831900B16CF4 /* TableViewScoreCell.swift in Sources */,
 				7819F0602939263B00A64670 /* PoseBuilder+Multiple.swift in Sources */,
 				7819F05A2939262C00A64670 /* ConfigurationViewController.swift in Sources */,
 				7819F0642939264600A64670 /* PoseNetInput.swift in Sources */,

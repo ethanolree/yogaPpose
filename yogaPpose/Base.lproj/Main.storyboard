@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,58 +29,67 @@
                                 <rect key="frame" x="16" y="67" width="224" height="96"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECENT WORKOUTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBQ-Va-mY8">
-                                <rect key="frame" x="39" y="450" width="178" height="25"/>
+                                <rect key="frame" x="39" y="450" width="178" height="62"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="EfF-oR-bcf">
-                                <rect key="frame" x="0.0" y="483" width="393" height="278"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0fb-Hn-efG" userLabel="scoreCell" customClass="TableViewScoreCell" customModule="yogaPpose" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0fb-Hn-efG" id="p0Q-lz-KgR">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qQd-id-9aa">
+                                <rect key="frame" x="0.0" y="498" width="393" height="220"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="sTm-Bw-MLh"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yVn-AG-PuQ">
+                                    <size key="itemSize" width="128" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recentCell" id="65H-gB-u4Y" customClass="CollectionViewCell" customModule="yogaPpose" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="10" width="128" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VRB-DW-z4v">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorkoutScore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOy-fj-h8x">
-                                                    <rect key="frame" x="264" y="11.000000000000002" width="109" height="20.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorkoutName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usz-wB-2BM">
+                                                    <rect key="frame" x="8" y="7.9999999999999982" width="109" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorkoutName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zZ-rV-a0l">
-                                                    <rect key="frame" x="20" y="10" width="109" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorkoutScore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pZ-OD-ahU">
+                                                    <rect key="frame" x="8" y="54.000000000000007" width="109" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.5490196078431373" green="0.20392156862745098" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="lOy-fj-h8x" firstAttribute="trailing" secondItem="p0Q-lz-KgR" secondAttribute="trailingMargin" id="Dba-Us-0DD"/>
-                                                <constraint firstItem="3zZ-rV-a0l" firstAttribute="leading" secondItem="p0Q-lz-KgR" secondAttribute="leading" constant="20" id="EKv-Ra-Dye"/>
-                                                <constraint firstItem="lOy-fj-h8x" firstAttribute="leading" secondItem="3zZ-rV-a0l" secondAttribute="trailing" constant="135" id="IVL-pf-LYi"/>
-                                                <constraint firstItem="3zZ-rV-a0l" firstAttribute="top" secondItem="p0Q-lz-KgR" secondAttribute="top" constant="10" id="Mii-qW-hCb"/>
-                                                <constraint firstAttribute="bottom" secondItem="3zZ-rV-a0l" secondAttribute="bottom" constant="12.67" id="gd5-b2-fK2"/>
-                                                <constraint firstItem="lOy-fj-h8x" firstAttribute="leading" secondItem="3zZ-rV-a0l" secondAttribute="trailing" constant="135" id="h5j-if-0Gw"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="lOy-fj-h8x" secondAttribute="bottom" constant="1" id="p9z-oX-Brf"/>
-                                                <constraint firstItem="lOy-fj-h8x" firstAttribute="top" secondItem="p0Q-lz-KgR" secondAttribute="topMargin" id="q6e-KO-448"/>
+                                                <constraint firstItem="7pZ-OD-ahU" firstAttribute="top" secondItem="Usz-wB-2BM" secondAttribute="bottom" constant="24.666666666666742" id="7nH-zY-ZLV"/>
+                                                <constraint firstItem="Usz-wB-2BM" firstAttribute="top" secondItem="VRB-DW-z4v" secondAttribute="top" constant="8" id="8Al-th-2sS"/>
+                                                <constraint firstAttribute="trailing" secondItem="Usz-wB-2BM" secondAttribute="trailing" constant="11" id="TjT-Wt-k1I"/>
+                                                <constraint firstAttribute="trailing" secondItem="7pZ-OD-ahU" secondAttribute="trailing" constant="11" id="VTp-pC-281"/>
+                                                <constraint firstItem="7pZ-OD-ahU" firstAttribute="leading" secondItem="VRB-DW-z4v" secondAttribute="leading" constant="8" id="YzT-dB-IKM"/>
+                                                <constraint firstItem="Usz-wB-2BM" firstAttribute="leading" secondItem="VRB-DW-z4v" secondAttribute="leading" constant="8" id="bY8-Wq-Bb2"/>
                                             </constraints>
-                                        </tableViewCellContentView>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="200"/>
                                         <connections>
-                                            <outlet property="workoutName" destination="3zZ-rV-a0l" id="PLe-6h-0hp"/>
-                                            <outlet property="workoutScore" destination="lOy-fj-h8x" id="jnY-04-5Ij"/>
+                                            <outlet property="workoutName" destination="Usz-wB-2BM" id="6PA-qT-ZHJ"/>
+                                            <outlet property="workoutScore" destination="7pZ-OD-ahU" id="Yv1-XC-mmb"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="cqD-mb-jDE" secondAttribute="trailing" constant="137" id="1vC-gG-u4A"/>
+                            <constraint firstAttribute="trailing" secondItem="qQd-id-9aa" secondAttribute="trailing" id="3UF-Ja-02l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FBQ-Va-mY8" secondAttribute="trailing" constant="160" id="6nE-BV-cg9"/>
                             <constraint firstItem="CzE-vg-aPP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DCp-dk-CAW"/>
                             <constraint firstItem="CzE-vg-aPP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DrB-4A-h8x"/>
@@ -88,43 +98,24 @@
                             <constraint firstItem="FBQ-Va-mY8" firstAttribute="top" secondItem="cqD-mb-jDE" secondAttribute="bottom" constant="287" id="Vbh-71-Ozx"/>
                             <constraint firstAttribute="bottom" secondItem="CzE-vg-aPP" secondAttribute="bottom" id="YSJ-0E-luf"/>
                             <constraint firstItem="cqD-mb-jDE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cyw-vv-pq7"/>
-                            <constraint firstItem="EfF-oR-bcf" firstAttribute="top" secondItem="FBQ-Va-mY8" secondAttribute="bottom" constant="8" symbolic="YES" id="iCV-7S-Ssa"/>
                             <constraint firstAttribute="trailing" secondItem="CzE-vg-aPP" secondAttribute="trailing" id="pDC-tF-rVK"/>
+                            <constraint firstItem="qQd-id-9aa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pzw-RY-gRY"/>
                             <constraint firstItem="CzE-vg-aPP" firstAttribute="top" secondItem="cqD-mb-jDE" secondAttribute="bottom" constant="-163" id="s4h-27-TL8"/>
                             <constraint firstItem="cqD-mb-jDE" firstAttribute="top" secondItem="y9M-QV-ig4" secondAttribute="bottom" constant="8" symbolic="YES" id="sQR-om-6DL"/>
+                            <constraint firstItem="qQd-id-9aa" firstAttribute="top" secondItem="FBQ-Va-mY8" secondAttribute="bottom" constant="-14" id="yIA-YM-NM3"/>
+                            <constraint firstItem="jyJ-IH-DcU" firstAttribute="top" secondItem="qQd-id-9aa" secondAttribute="bottom" constant="51" id="zfm-bX-uPe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="dJM-8N-gnJ">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="workoutResultsTableView" destination="EfF-oR-bcf" id="njP-ed-qet"/>
+                        <outlet property="workoutResultsCollectionView" destination="qQd-id-9aa" id="SBy-d1-e7Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="852.67175572519079" y="-1139.4366197183099"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="nUg-Gv-GqY">
-            <objects>
-                <viewController id="MHe-9T-a6p" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SVB-dC-DPp"/>
-                        <viewControllerLayoutGuide type="bottom" id="NVg-9p-NGd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gp4-Hl-3fc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" selectedImage="person.fill" id="qCq-1c-zlm">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O4L-RU-plO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="853" y="163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Hs-SM-PSA">
@@ -170,7 +161,6 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="dmk-J2-Lrg"/>
                         <segue destination="J9d-1m-DdX" kind="relationship" relationship="viewControllers" id="n63-oo-pOh"/>
-                        <segue destination="MHe-9T-a6p" kind="relationship" relationship="viewControllers" id="BQr-jF-aCA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THX-xc-c9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -687,8 +677,6 @@
         <image name="figure.yoga" catalog="system" width="128" height="124"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="person" catalog="system" width="128" height="121"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="yogaPoseLogo" width="612" height="612"/>
         <namedColor name="JointColor">

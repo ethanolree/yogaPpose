@@ -7,32 +7,39 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    @IBOutlet weak var workoutResultsTableView: UITableView!
+    @IBOutlet weak var workoutResultsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        workoutResultsTableView.delegate = self
-        workoutResultsTableView.dataSource = self
-        workoutResultsTableView.register(TableViewScoreCell.self, forCellReuseIdentifier: "scoreCell")
+        workoutResultsCollectionView.delegate = self
+        workoutResultsCollectionView.dataSource = self
     }
     
     lazy private var workoutsModel:WorkoutsModel = {
         return WorkoutsModel.sharedInstance
     }()
-
-    func numberOfSections(in workoutResultsTableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.workoutsModel.workoutsArray.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let dynamicCellId = "recentCell"
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dynamicCellId, for: indexPath) as? CollectionViewCell {
+            cell.workoutName.text = workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]?.name
+            cell.workoutScore.text = String(workoutsModel.getWorkoutScore(workoutName: workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]?.name ?? ""))
+            return cell
+        } else {
+            fatalError("Could not dequeue cell")
+        }
+    }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    /*func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var dynamicCellId: String
         
         dynamicCellId = "scoreCell"
@@ -42,7 +49,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
 
         return cell
-    }
+    }*/
 
 }
 

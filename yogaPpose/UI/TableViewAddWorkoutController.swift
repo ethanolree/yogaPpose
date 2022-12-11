@@ -57,6 +57,10 @@ class TableViewAddWorkoutController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row < workoutBuilder.posesForWorkout.count
+    }
 
     @IBAction func addPoseToWorkout(_ sender: Any) {
         workoutBuilder.addPose()
