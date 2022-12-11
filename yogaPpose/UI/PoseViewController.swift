@@ -125,7 +125,11 @@ class PoseViewController: UIViewController {
             success += keyValue.value
             outOf += self.workout.workoutPoses[index].length
         }
-        defaults.set(success/outOf, forKey: self.workout.name)
+        let thisScore = success/outOf
+        // update score only if better than last attempt
+        if (thisScore > defaults.double(forKey: self.workout.name) ){
+            defaults.set(thisScore, forKey: self.workout.name)
+        }
         self.tabBarController?.tabBar.isHidden = false
         videoCapture.stopCapturing {
             super.endAppearanceTransition()
