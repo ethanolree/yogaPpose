@@ -285,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZeC-0T-LNY" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2515" y="-487"/>
+            <point key="canvasLocation" x="2624" y="-173"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="sSk-J8-gq1">
@@ -359,7 +359,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qY-5a-V3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="o6Z-C2-ibq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3521" y="-487"/>
+            <point key="canvasLocation" x="3630" y="-173"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="Mge-Dk-avt">
@@ -428,6 +428,55 @@
                                     <segue destination="eXK-g5-9yz" kind="show" id="wPQ-tS-zsM"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addCell" rowHeight="100" id="2KO-19-76C" customClass="TableViewAddCell" customModule="yogaPpose" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="150" width="393" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2KO-19-76C" id="VNe-Xo-3DH">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fk4-o3-5Fg" customClass="GradientOverlayView" customModule="yogaPpose" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="76" width="393" height="90"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.64197019870000005" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ked-Uj-AZE">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="393" id="MZG-pP-eFx"/>
+                                                <constraint firstAttribute="height" constant="100" id="zka-L8-JJu"/>
+                                            </constraints>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" image="plus.circle.fill" catalog="system">
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <segue destination="US8-Q8-s61" kind="presentation" id="4t1-6x-MTu"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="fk4-o3-5Fg" secondAttribute="bottom" constant="-66" id="3L5-kP-hv2"/>
+                                        <constraint firstAttribute="trailing" secondItem="fk4-o3-5Fg" secondAttribute="trailing" id="6e5-4d-G6a"/>
+                                        <constraint firstItem="Ked-Uj-AZE" firstAttribute="centerX" secondItem="VNe-Xo-3DH" secondAttribute="centerX" id="CcS-O1-fcq"/>
+                                        <constraint firstItem="fk4-o3-5Fg" firstAttribute="top" secondItem="VNe-Xo-3DH" secondAttribute="top" constant="76" id="Edr-kN-Xki"/>
+                                        <constraint firstItem="Ked-Uj-AZE" firstAttribute="centerY" secondItem="VNe-Xo-3DH" secondAttribute="centerY" id="Xgv-hk-ok7"/>
+                                        <constraint firstItem="fk4-o3-5Fg" firstAttribute="leading" secondItem="VNe-Xo-3DH" secondAttribute="leading" id="nQi-Nf-zuD"/>
+                                        <constraint firstAttribute="bottom" secondItem="fk4-o3-5Fg" secondAttribute="bottom" constant="-66" id="o9z-Ys-HKf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.72156862749999995" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -441,6 +490,177 @@
             </objects>
             <point key="canvasLocation" x="1672.5190839694656" y="-487.32394366197184"/>
         </scene>
+        <!--Table View Add Workout Controller-->
+        <scene sceneID="N5R-cL-fuP">
+            <objects>
+                <tableViewController id="US8-Q8-s61" customClass="TableViewAddWorkoutController" customModule="yogaPpose" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="LgR-9P-doq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Ia0-yN-6Qc">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="104"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIF-dX-DPe">
+                                    <rect key="frame" x="265" y="73" width="128" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="128" id="6Tr-C9-0n0"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOB-wD-sd4">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="65"/>
+                                    <color key="backgroundColor" red="0.25098039215686274" green="0.070588235294117646" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="65" id="Pr0-FH-wlu"/>
+                                        <constraint firstAttribute="width" constant="393" id="yWT-il-Ajf"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Save">
+                                        <color key="baseBackgroundColor" red="0.25098039215686274" green="0.070588235294117646" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <segue destination="xyb-LB-Did" kind="unwind" unwindAction="refreshTableWithSegue:" id="MOF-gT-R9b"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdc-md-uzt">
+                                    <rect key="frame" x="0.0" y="73" width="257" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="bdc-md-uzt" firstAttribute="leading" secondItem="Ia0-yN-6Qc" secondAttribute="leading" id="46T-Nu-PR7"/>
+                                <constraint firstAttribute="bottom" secondItem="bdc-md-uzt" secondAttribute="bottom" constant="10" id="5Xv-Qo-geh"/>
+                                <constraint firstAttribute="bottom" secondItem="DIF-dX-DPe" secondAttribute="bottom" constant="10" id="C8j-OM-HxM"/>
+                                <constraint firstItem="HOB-wD-sd4" firstAttribute="leading" secondItem="Ia0-yN-6Qc" secondAttribute="leading" id="COc-ij-TIM"/>
+                                <constraint firstItem="DIF-dX-DPe" firstAttribute="leading" secondItem="bdc-md-uzt" secondAttribute="trailing" constant="8" symbolic="YES" id="KUU-Vc-IZO"/>
+                                <constraint firstAttribute="trailing" secondItem="HOB-wD-sd4" secondAttribute="trailing" id="S9a-62-Uz2"/>
+                                <constraint firstItem="bdc-md-uzt" firstAttribute="top" secondItem="HOB-wD-sd4" secondAttribute="bottom" constant="8" symbolic="YES" id="Wh3-WM-mhr"/>
+                                <constraint firstAttribute="trailing" secondItem="DIF-dX-DPe" secondAttribute="trailing" id="fij-8g-rdD"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="poseCell" rowHeight="100" id="kVC-yc-ttS" customClass="TableViewPoseCell" customModule="yogaPpose" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="154" width="393" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kVC-yc-ttS" id="bFD-n2-nh4">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgB-vs-4ar" customClass="GradientOverlayView" customModule="yogaPpose" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="76" width="393" height="90"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.64197019870000005" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ep6-y9-htT">
+                                            <rect key="frame" x="0.0" y="0.0" width="256" height="100"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" image="YES"/>
+                                            </accessibility>
+                                        </pickerView>
+                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcY-GE-Hlk">
+                                            <rect key="frame" x="256" y="0.0" width="137" height="100"/>
+                                        </pickerView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="qgB-vs-4ar" secondAttribute="trailing" id="17e-AA-bt4"/>
+                                        <constraint firstAttribute="bottom" secondItem="qgB-vs-4ar" secondAttribute="bottom" constant="-66" id="3O5-rQ-pnb"/>
+                                        <constraint firstItem="qgB-vs-4ar" firstAttribute="top" secondItem="bFD-n2-nh4" secondAttribute="topMargin" constant="65" id="IBh-Vm-PIf"/>
+                                        <constraint firstAttribute="trailing" secondItem="QcY-GE-Hlk" secondAttribute="trailing" id="JIa-rx-Qg9"/>
+                                        <constraint firstAttribute="bottom" secondItem="ep6-y9-htT" secondAttribute="bottom" id="KTc-59-orj"/>
+                                        <constraint firstAttribute="trailing" secondItem="ep6-y9-htT" secondAttribute="trailing" constant="137" id="LWV-77-MGW"/>
+                                        <constraint firstItem="QcY-GE-Hlk" firstAttribute="leading" secondItem="ep6-y9-htT" secondAttribute="trailing" id="OJU-f6-dQh"/>
+                                        <constraint firstAttribute="bottom" secondItem="QcY-GE-Hlk" secondAttribute="bottom" id="UIg-LC-EVo"/>
+                                        <constraint firstItem="ep6-y9-htT" firstAttribute="top" secondItem="bFD-n2-nh4" secondAttribute="top" id="ax5-CR-6sW"/>
+                                        <constraint firstItem="ep6-y9-htT" firstAttribute="leading" secondItem="bFD-n2-nh4" secondAttribute="leading" id="fpy-JM-pF2"/>
+                                        <constraint firstItem="QcY-GE-Hlk" firstAttribute="top" secondItem="bFD-n2-nh4" secondAttribute="top" id="lIc-Hj-vCV"/>
+                                        <constraint firstItem="qgB-vs-4ar" firstAttribute="leading" secondItem="bFD-n2-nh4" secondAttribute="leading" id="mFu-to-IJ7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.72156862749999995" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="posePicker" destination="ep6-y9-htT" id="QfW-fy-Ky1"/>
+                                    <outlet property="timePicker" destination="QcY-GE-Hlk" id="weT-sX-vc7"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addCell" rowHeight="100" id="WEu-rE-1l7" customClass="TableViewAddCell" customModule="yogaPpose" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="254" width="393" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WEu-rE-1l7" id="fos-XT-GVa">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpH-0e-GPy" customClass="GradientOverlayView" customModule="yogaPpose" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="76" width="393" height="90"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.64197019870000005" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNF-5q-yld">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="393" id="lcZ-Hd-GFZ"/>
+                                                <constraint firstAttribute="height" constant="100" id="rIV-ja-N5k"/>
+                                            </constraints>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" image="plus.circle.fill" catalog="system">
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="addPoseToWorkout:" destination="US8-Q8-s61" eventType="touchUpInside" id="bqk-9h-dfk"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="uNF-5q-yld" firstAttribute="centerY" secondItem="fos-XT-GVa" secondAttribute="centerY" id="1dI-Qh-fIV"/>
+                                        <constraint firstAttribute="bottom" secondItem="kpH-0e-GPy" secondAttribute="bottom" constant="-66" id="UcF-8L-BsX"/>
+                                        <constraint firstAttribute="trailing" secondItem="kpH-0e-GPy" secondAttribute="trailing" id="UhY-cF-uh3"/>
+                                        <constraint firstItem="kpH-0e-GPy" firstAttribute="top" secondItem="fos-XT-GVa" secondAttribute="top" constant="76" id="gOk-Ek-bbH"/>
+                                        <constraint firstItem="uNF-5q-yld" firstAttribute="centerX" secondItem="fos-XT-GVa" secondAttribute="centerX" id="maH-UI-4T9"/>
+                                        <constraint firstItem="kpH-0e-GPy" firstAttribute="leading" secondItem="fos-XT-GVa" secondAttribute="leading" id="wCX-CZ-S3T"/>
+                                        <constraint firstAttribute="bottom" secondItem="kpH-0e-GPy" secondAttribute="bottom" constant="-66" id="wa9-hf-NAf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.72156862749999995" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="US8-Q8-s61" id="XUv-yG-ybM"/>
+                            <outlet property="delegate" destination="US8-Q8-s61" id="sSA-o5-7wV"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="headingView" destination="Ia0-yN-6Qc" id="egP-sE-zrY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxg-s1-bio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="xyb-LB-Did" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2623.6641221374043" y="-858.45070422535218"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.triangle.2.circlepath.camera.fill" catalog="system" width="128" height="93"/>
@@ -451,6 +671,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="yogaPoseLogo" width="612" height="612"/>
         <namedColor name="JointColor">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
@@ -458,6 +679,9 @@
         <namedColor name="SegmentColor">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

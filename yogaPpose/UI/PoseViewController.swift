@@ -108,7 +108,7 @@ class PoseViewController: UIViewController {
             return
         } else {
             self.currentPose = self.workout.workoutPoses[poseIndex]
-            self.currentPoseImage.image = self.currentPose.poseImage
+            self.currentPoseImage.image = WorkoutPose.getPoseImage(name: self.currentPose.poseImageName) 
             self.score[self.currentPose.name] = 0
             
             /// Set a timer to change to the next pose once the current one is finished

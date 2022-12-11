@@ -36,7 +36,7 @@ class TableViewCell: UITableViewCell {
     
     private func setPoseImages(imageView: UIImageView, index: Int) {
         if (workout?.workoutPoses.count ?? 0 > index) {
-            imageView.image = workout?.workoutPoses[index].poseImage
+            imageView.image = WorkoutPose.getPoseImage(name: workout?.workoutPoses[index].poseImageName ?? "")
         } else {
             imageView.backgroundColor = UIColor(white: 1, alpha: 0.0)
         }

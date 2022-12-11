@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class WorkoutPose {    
+class WorkoutPose: Codable {
     /// The name used to identify the pose
     let name: String
     
@@ -19,7 +19,7 @@ class WorkoutPose {
     var length: Double
     
     /// The image associated with a particular pose
-    var poseImage: UIImage
+    var poseImageName: String
     
     init(name: String,
          id: String,
@@ -28,10 +28,11 @@ class WorkoutPose {
         self.name = name
         self.id = id
         self.length = length
-        self.poseImage = WorkoutPose.getPoseImage(name: poseImageName)
+        self.poseImageName = poseImageName
+        // self.poseImage = WorkoutPose.getPoseImage(name: poseImageName)
     }
     
-    private static func getPoseImage(name: String) -> UIImage {
+    static func getPoseImage(name: String) -> UIImage {
         return UIImage(named: name)!
     }
 }

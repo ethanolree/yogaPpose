@@ -16,6 +16,8 @@ class TableViewController: UITableViewController {
     lazy private var workoutsModel:WorkoutsModel = {
         return WorkoutsModel.sharedInstance
     }()
+    
+    private var workoutBuilder: WorkoutBuilder!
 
     // MARK: - Table view data source
 
@@ -24,15 +26,21 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.workoutsModel.workoutsArray.count
+        return self.workoutsModel.workoutsArray.count + 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var dynamicCellId = "basicCell"
+        var dynamicCellId: String
+        var cell: UITableViewCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: dynamicCellId, for: indexPath) as! TableViewCell
-
-        cell.workout = workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]
+        if (indexPath.row == self.workoutsModel.workoutsArray.count) {
+            dynamicCellId = "addCell"
+            cell = tableView.dequeueReusableCell(withIdentifier: dynamicCellId, for: indexPath) as! TableViewAddCell
+        } else {
+            dynamicCellId = "basicCell"
+            cell = tableView.dequeueReusableCell(withIdentifier: dynamicCellId, for: indexPath) as! TableViewCell
+            (cell as! TableViewCell).workout = workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]
+        }
 
         return cell
     }
@@ -59,10 +67,26 @@ class TableViewController: UITableViewController {
            let workout = cell.workout {
                 viewController.workout = workout
             }
+        
+        if let viewController = segue.destination as? TableViewAddWorkoutController {
+            workoutBuilder = WorkoutBuilder()
+            viewController.workoutBuilder = workoutBuilder
+        }
     }
     
     @IBAction func cancelWorkout(segue: UIStoryboardSegue) {
         print("Workout Canceled")
+    }
+    
+    @IBAction func refreshTable(segue: UIStoryboardSegue) {
+        print("REFRESH TABLE")
+        workoutBuilder.createWorkout()
+        /// Delay table refresh
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            print("AQUI")
+            self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
+        }
     }
 
 }
