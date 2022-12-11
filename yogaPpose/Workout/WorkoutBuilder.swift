@@ -37,10 +37,5 @@ class WorkoutBuilder: NSObject {
         }
         
         try? self.workoutsModel.addWorkoutToDict(poses: workoutPoses)
-    }
-    
-    private func removeWorkout(workoutToBeRemoved: String) {
-        self.workoutsModel.removeWorkoutDict(workoutName: workoutToBeRemoved)
-    }
-    
+    }    
 }

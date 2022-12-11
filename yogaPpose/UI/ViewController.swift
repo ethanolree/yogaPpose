@@ -24,32 +24,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.workoutsModel.workoutsArray.count
+        return self.workoutsModel.recentWorkouts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let dynamicCellId = "recentCell"
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dynamicCellId, for: indexPath) as? CollectionViewCell {
-            cell.workoutName.text = workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]?.name
-            cell.workoutScore.text = String(workoutsModel.getWorkoutScore(workoutName: workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]?.name ?? ""))
+            cell.workoutName.text = workoutsModel.workoutsDict[workoutsModel.recentWorkouts[indexPath.row]]?.name
+            cell.workoutScore.text = String(workoutsModel.getWorkoutScore(workoutName: workoutsModel.workoutsDict[workoutsModel.recentWorkouts[indexPath.row]]?.name ?? ""))
             return cell
         } else {
             fatalError("Could not dequeue cell")
         }
     }
-
-    /*func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var dynamicCellId: String
-        
-        dynamicCellId = "scoreCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: dynamicCellId, for: indexPath) as! TableViewScoreCell
-        cell.workout1 = workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]
-        cell.score = workoutsModel.getWorkoutScore(workoutName: workoutsModel.workoutsDict[workoutsModel.workoutsArray[indexPath.row]]!.name)
-        
-
-        return cell
-    }*/
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.workoutResultsCollectionView.reloadData()
+        self.workoutResultsCollectionView.refreshControl?.endRefreshing()
+    }
 }
 

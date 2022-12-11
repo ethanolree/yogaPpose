@@ -27,6 +27,7 @@ class WorkoutsModel: NSObject {
         "warrior": "Warrior"
     ]
     
+    /// Gets the workout dictionary for the current user
     lazy var workoutsDict: [String: Workout] = {
         if let data: Data = defaults.object(forKey: "workouts") as? Data {
             let decoder = JSONDecoder()
@@ -51,6 +52,16 @@ class WorkoutsModel: NSObject {
         return Array(workoutsDict.keys).sorted()
     }()
     
+    lazy var recentWorkouts: [String] = {
+        if let data: Data = defaults.object(forKey: "recentWorkouts") as? Data {
+            let decoder = JSONDecoder()
+            let temp = try! decoder.decode([String].self, from: data)
+            return temp
+        } else {
+            return []
+        }
+    }()
+    
     var defaultPoses: [String: WorkoutPose] = [
         "downdog": WorkoutPose(name: "Downward Dog", id: "downdog", length: 10.0, poseImageName: "downdog"),
         "goddess": WorkoutPose(name: "Goddess", id: "goddess", length: 10.0, poseImageName: "goddess"),
@@ -58,18 +69,6 @@ class WorkoutsModel: NSObject {
         "plank": WorkoutPose(name: "plank", id: "plank", length: 10.0, poseImageName: "plank"),
         "warrior": WorkoutPose(name: "warrior", id: "warrior", length: 10.0, poseImageName: "warrior")
     ]
-    
-    
-    /*private func initWorkoutPoses() {
-        if defaults.object(forKey: "Workouts") == nil{
-            defaults.set(workoutsDict, forKey: "Workouts")
-            print("inits")
-        } else {
-            defaults.set(workoutsDict, forKey: "Workouts")
-            workoutsDict = defaults.object(forKey: "Workouts") as? [String: Workout] ?? [String: Workout]()
-        }
-        
-    }*/
        
     func setPoseLength(id: String, timerLength: Double) -> WorkoutPose {
         return WorkoutPose(name: poseNames[id] ?? "", id: id, length: timerLength, poseImageName: id)
@@ -79,6 +78,7 @@ class WorkoutsModel: NSObject {
         return self.defaultPoses[id]!
     }
     
+    /// Inserts a new workout
     func addWorkoutToDict(poses: [WorkoutPose]) throws{
         let id: Int = generateWorkoutId()
         let workoutName: String = "Workout \(id)"
@@ -88,26 +88,44 @@ class WorkoutsModel: NSObject {
         
         let encoder = JSONEncoder()
         try? defaults.set(encoder.encode(workoutsDict), forKey: "workouts")
-        	
-        /*let manager: FileManager = FileManager.default
-        let filePath: String = "\(NSHomeDirectory())/Documents/myBin.bin"
-        let currentPathUrl: URL = URL(filePath: filePath)
-        
-        let jsonData: Data = try! JSONSerialization.data(withJSONObject: NSDictionary(dictionary: workoutsDict))
-        
-        try? manager.removeItem(at: currentPathUrl)
-        manager.createFile(atPath: filePath, contents: jsonData)*/
         
     }
     
+    /// Removes an existing workout
+    func removeWorkout(workoutName: String){
+        workoutsDict.removeValue(forKey: workoutName)
+        workoutsArray = Array(workoutsDict.keys).sorted()
+        
+        if (recentWorkouts.contains(workoutName)) {
+            recentWorkouts.removeAll(where: {$0 == workoutName})
+            let encoder = JSONEncoder()
+            try? defaults.set(encoder.encode(recentWorkouts), forKey: "recentWorkouts")
+        }
+        
+        let encoder = JSONEncoder()
+        try? defaults.set(encoder.encode(workoutsDict), forKey: "workouts")
+    }
+    
+    /// Gets the workout score associated with a workout
     func getWorkoutScore(workoutName: String) -> Double{
         return defaults.double(forKey: workoutName)
     }
     
-    func removeWorkoutDict(workoutName: String){
-        workoutsDict = defaults.object(forKey: "Workouts") as? [String: Workout] ?? [String: Workout]()
-        workoutsDict.removeValue(forKey: workoutName)
-        defaults.set(workoutsDict, forKey: "Workouts")
+    /// Adds a workout to recents
+    func addWorkoutToRecents(workoutName: String) {
+        if (recentWorkouts.contains(workoutName)) {
+            recentWorkouts.removeAll(where: {$0 == workoutName})
+        }
+        
+        recentWorkouts.insert(workoutName, at: 0)
+        
+        /// Remove the oldest workout
+        if (recentWorkouts.count > 5) {
+            recentWorkouts.removeLast()
+        }
+        
+        let encoder = JSONEncoder()
+        try? defaults.set(encoder.encode(recentWorkouts), forKey: "recentWorkouts")
     }
         
     private func generateWorkoutId() -> Int {
