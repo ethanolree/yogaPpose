@@ -119,7 +119,13 @@ class PoseViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        defaults.set(self.score, forKey: self.workout.name)
+        var success = 0.0
+        var outOf = 0.0
+        for (index, keyValue) in self.score.enumerated() {
+            success += keyValue.value
+            outOf += self.workout.workoutPoses[index].length
+        }
+        defaults.set(success/outOf, forKey: self.workout.name)
         self.tabBarController?.tabBar.isHidden = false
         videoCapture.stopCapturing {
             super.endAppearanceTransition()

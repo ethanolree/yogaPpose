@@ -6,7 +6,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,46 +33,62 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IyT-rO-sXL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="EfF-oR-bcf">
                                 <rect key="frame" x="0.0" y="483" width="393" height="278"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="20x-dp-Toj">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NOG-00-0wW">
-                                        <rect key="frame" x="0.0" y="5.666666666666667" width="225" height="267"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MPE-Ce-QxO">
-                                            <rect key="frame" x="0.0" y="0.0" width="225" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0fb-Hn-efG" userLabel="scoreCell" customClass="TableViewScoreCell" customModule="yogaPpose" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0fb-Hn-efG" id="p0Q-lz-KgR">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </collectionViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="225" height="267"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorkoutScore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOy-fj-h8x">
+                                                    <rect key="frame" x="264" y="11.000000000000002" width="109" height="20.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorkoutName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zZ-rV-a0l">
+                                                    <rect key="frame" x="20" y="10" width="109" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lOy-fj-h8x" firstAttribute="trailing" secondItem="p0Q-lz-KgR" secondAttribute="trailingMargin" id="Dba-Us-0DD"/>
+                                                <constraint firstItem="3zZ-rV-a0l" firstAttribute="leading" secondItem="p0Q-lz-KgR" secondAttribute="leading" constant="20" id="EKv-Ra-Dye"/>
+                                                <constraint firstItem="lOy-fj-h8x" firstAttribute="leading" secondItem="3zZ-rV-a0l" secondAttribute="trailing" constant="135" id="IVL-pf-LYi"/>
+                                                <constraint firstItem="3zZ-rV-a0l" firstAttribute="top" secondItem="p0Q-lz-KgR" secondAttribute="top" constant="10" id="Mii-qW-hCb"/>
+                                                <constraint firstAttribute="bottom" secondItem="3zZ-rV-a0l" secondAttribute="bottom" constant="12.67" id="gd5-b2-fK2"/>
+                                                <constraint firstItem="lOy-fj-h8x" firstAttribute="leading" secondItem="3zZ-rV-a0l" secondAttribute="trailing" constant="135" id="h5j-if-0Gw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="lOy-fj-h8x" secondAttribute="bottom" constant="1" id="p9z-oX-Brf"/>
+                                                <constraint firstItem="lOy-fj-h8x" firstAttribute="top" secondItem="p0Q-lz-KgR" secondAttribute="topMargin" id="q6e-KO-448"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="workoutName" destination="3zZ-rV-a0l" id="PLe-6h-0hp"/>
+                                            <outlet property="workoutScore" destination="lOy-fj-h8x" id="jnY-04-5Ij"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="cqD-mb-jDE" secondAttribute="trailing" constant="137" id="1vC-gG-u4A"/>
-                            <constraint firstItem="IyT-rO-sXL" firstAttribute="leading" secondItem="CzE-vg-aPP" secondAttribute="leading" id="5RQ-Qd-N43"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FBQ-Va-mY8" secondAttribute="trailing" constant="160" id="6nE-BV-cg9"/>
-                            <constraint firstItem="IyT-rO-sXL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Lr-4L-CcR"/>
                             <constraint firstItem="CzE-vg-aPP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DCp-dk-CAW"/>
                             <constraint firstItem="CzE-vg-aPP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DrB-4A-h8x"/>
-                            <constraint firstItem="jyJ-IH-DcU" firstAttribute="top" secondItem="IyT-rO-sXL" secondAttribute="bottom" constant="8" symbolic="YES" id="ENF-56-n01"/>
                             <constraint firstItem="FBQ-Va-mY8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="23" id="NJ5-Ha-5TM"/>
                             <constraint firstItem="FBQ-Va-mY8" firstAttribute="top" secondItem="cqD-mb-jDE" secondAttribute="bottom" constant="287" id="NrD-BE-UjJ"/>
                             <constraint firstItem="FBQ-Va-mY8" firstAttribute="top" secondItem="cqD-mb-jDE" secondAttribute="bottom" constant="287" id="Vbh-71-Ozx"/>
                             <constraint firstAttribute="bottom" secondItem="CzE-vg-aPP" secondAttribute="bottom" id="YSJ-0E-luf"/>
-                            <constraint firstItem="IyT-rO-sXL" firstAttribute="top" secondItem="CzE-vg-aPP" secondAttribute="bottom" constant="-369" id="ZK4-5p-JDd"/>
                             <constraint firstItem="cqD-mb-jDE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cyw-vv-pq7"/>
-                            <constraint firstItem="IyT-rO-sXL" firstAttribute="top" secondItem="FBQ-Va-mY8" secondAttribute="bottom" constant="8" symbolic="YES" id="gqL-Wn-mlf"/>
+                            <constraint firstItem="EfF-oR-bcf" firstAttribute="top" secondItem="FBQ-Va-mY8" secondAttribute="bottom" constant="8" symbolic="YES" id="iCV-7S-Ssa"/>
                             <constraint firstAttribute="trailing" secondItem="CzE-vg-aPP" secondAttribute="trailing" id="pDC-tF-rVK"/>
                             <constraint firstItem="CzE-vg-aPP" firstAttribute="top" secondItem="cqD-mb-jDE" secondAttribute="bottom" constant="-163" id="s4h-27-TL8"/>
                             <constraint firstItem="cqD-mb-jDE" firstAttribute="top" secondItem="y9M-QV-ig4" secondAttribute="bottom" constant="8" symbolic="YES" id="sQR-om-6DL"/>
@@ -82,6 +97,9 @@
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="dJM-8N-gnJ">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="workoutResultsTableView" destination="EfF-oR-bcf" id="njP-ed-qet"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

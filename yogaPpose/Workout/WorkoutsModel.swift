@@ -100,6 +100,10 @@ class WorkoutsModel: NSObject {
         
     }
     
+    func getWorkoutScore(workoutName: String) -> Double{
+        return defaults.double(forKey: workoutName)
+    }
+    
     func removeWorkoutDict(workoutName: String){
         workoutsDict = defaults.object(forKey: "Workouts") as? [String: Workout] ?? [String: Workout]()
         workoutsDict.removeValue(forKey: workoutName)
