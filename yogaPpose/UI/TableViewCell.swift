@@ -7,39 +7,43 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var title: UILabel!
-    
-    @IBOutlet weak var image1: UIImageView!
-    @IBOutlet weak var image2: UIImageView!
-    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var imageCollection: UICollectionView!
     
     var workout: Workout? {
         didSet {
             title.text = workout?.name
-            setPoseImages(imageView: image1, index: 0)
-            setPoseImages(imageView: image2, index: 1)
-            setPoseImages(imageView: image3, index: 2)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
+        imageCollection.delegate = self
+        imageCollection.dataSource = self
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.workout?.workoutPoses.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let dynamicCellId = "imageCell"
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dynamicCellId, for: indexPath) as? ImageCollectionViewCell {
+            cell.imageView.image = WorkoutPose.getPoseImage(name: workout?.workoutPoses[indexPath.row].poseImageName ?? "")
+            return cell
+        } else {
+            fatalError("Could not dequeue cell")
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    private func setPoseImages(imageView: UIImageView, index: Int) {
-        if (workout?.workoutPoses.count ?? 0 > index) {
-            imageView.image = WorkoutPose.getPoseImage(name: workout?.workoutPoses[index].poseImageName ?? "")
-        } else {
-            imageView.backgroundColor = UIColor(white: 1, alpha: 0.0)
-        }
     }
 
 }

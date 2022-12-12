@@ -32,7 +32,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dynamicCellId, for: indexPath) as? CollectionViewCell {
             cell.workoutName.text = workoutsModel.workoutsDict[workoutsModel.recentWorkouts[indexPath.row]]?.name
-            cell.workoutScore.text = String(workoutsModel.getWorkoutScore(workoutName: workoutsModel.workoutsDict[workoutsModel.recentWorkouts[indexPath.row]]?.name ?? ""))
+            cell.workoutScore.text = "Workout Grade: \(workoutsModel.getWorkoutScore(workoutName: workoutsModel.workoutsDict[workoutsModel.recentWorkouts[indexPath.row]]?.name ?? ""))"
             return cell
         } else {
             fatalError("Could not dequeue cell")

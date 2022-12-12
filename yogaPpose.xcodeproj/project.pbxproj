@@ -42,6 +42,7 @@
 		7819F083293AB83000A64670 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819F082293AB83000A64670 /* TableViewCell.swift */; };
 		782917CF294682FF00B16CF4 /* UI in Resources */ = {isa = PBXBuildFile; fileRef = 782917CE294682FF00B16CF4 /* UI */; };
 		782917D52946831900B16CF4 /* TableViewScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782917D22946831900B16CF4 /* TableViewScoreCell.swift */; };
+		782917D92946A56400B16CF4 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782917D82946A56400B16CF4 /* ImageCollectionViewCell.swift */; };
 		78C8450D293D611B00A65614 /* YogaPose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8450C293D611A00A65614 /* YogaPose.swift */; };
 		78C8450F293D7D5400A65614 /* yogapose.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 78C8450E293D7D5400A65614 /* yogapose.mlmodel */; };
 		78C845112942D7BA00A65614 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C845102942D7BA00A65614 /* StartViewController.swift */; };
@@ -109,6 +110,7 @@
 		7819F082293AB83000A64670 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		782917CE294682FF00B16CF4 /* UI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UI; sourceTree = "<group>"; };
 		782917D22946831900B16CF4 /* TableViewScoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewScoreCell.swift; sourceTree = "<group>"; };
+		782917D82946A56400B16CF4 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		78C8450C293D611A00A65614 /* YogaPose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaPose.swift; sourceTree = "<group>"; };
 		78C8450E293D7D5400A65614 /* yogapose.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yogapose.mlmodel; sourceTree = "<group>"; };
 		78C845102942D7BA00A65614 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				78D939B0294541F4003A7777 /* TableViewAddCell.swift */,
 				78D939B229454BB7003A7777 /* TableViewPoseCell.swift */,
 				78D939B429454D5F003A7777 /* TableViewAddWorkoutController.swift */,
+				782917D82946A56400B16CF4 /* ImageCollectionViewCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				7819F0602939263B00A64670 /* PoseBuilder+Multiple.swift in Sources */,
 				7819F05A2939262C00A64670 /* ConfigurationViewController.swift in Sources */,
 				7819F0642939264600A64670 /* PoseNetInput.swift in Sources */,
+				782917D92946A56400B16CF4 /* ImageCollectionViewCell.swift in Sources */,
 				7819F00C2936D89700A64670 /* SceneDelegate.swift in Sources */,
 				7819F0612939263E00A64670 /* Joint.swift in Sources */,
 				7819F05E2939263700A64670 /* Pose.swift in Sources */,
